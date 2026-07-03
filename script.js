@@ -89,7 +89,7 @@ function getMenuTag(menu) {
 }
 
 // === Countdown Timer ===
-const eventDate = new Date("2025-10-17T20:00:00+08:00").getTime();
+const eventDate = new Date("2026-07-05T20:00:00+08:00").getTime();
 const countdownEl = document.getElementById("countdown");
 
 function updateCountdown() {

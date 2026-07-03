@@ -1,5 +1,5 @@
 // Path to your CSV file 
-const csvFilePath = "data56v2.csv"; // Ensure the correct path to your CSV file
+const csvFilePath = "MMP.csv"; // Ensure the correct path to your CSV file
 
 let guests = []; // This will hold the parsed guest data
 

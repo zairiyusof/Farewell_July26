@@ -1,0 +1,362 @@
+/* =========================================================
+   1️⃣ GLOBAL STYLES & LAYOUT
+   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Orbitron:wght@500&family=Playfair+Display:wght@600&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-color: #0a0a0a;
+  color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* =========================================================
+   2️⃣ HEADERS & TEXT
+   ========================================================= */
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffffaa, 0 0 20px #0088ffaa;
+  margin-top: 20px;
+}
+
+.description {
+  color: #cccccc;
+  margin-bottom: 20px;
+}
+
+header img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* =========================================================
+   3️⃣ CONTAINERS & FRAME
+   ========================================================= */
+.page-frame {
+  border: 3px solid rgba(0, 255, 255, 0.5);
+  border-radius: 20px;
+  padding: 25px;
+  margin: 20px auto;
+  max-width: 1200px;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.4), inset 0 0 15px rgba(0, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+}
+
+/* =========================================================
+   4️⃣ SEARCH BOX (FUTURISTIC STYLE)
+   ========================================================= */
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+#search-bar {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  border: 2px solid #00ffff88;
+  border-radius: 20px;
+  background: radial-gradient(circle at 20% 0%, #0c0c0c 0%, #111 100%);
+  color: #00ffff;
+  text-align: center;
+  box-shadow: 0 0 10px #00ffff55, inset 0 0 15px #00ffff22;
+  outline: none;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+#search-bar::placeholder {
+  color: #00ffff88;
+  letter-spacing: 1px;
+}
+
+#search-bar:focus {
+  border-color: #00ffff;
+  box-shadow: 0 0 20px #00ffffaa, inset 0 0 20px #00ffff44;
+  background-color: #0e0e0e;
+  transform: scale(1.02);
+}
+
+/* =========================================================
+   5️⃣ RESULTS / DATA BOX
+   ========================================================= */
+/* === Futuristic Data Box === */
+.data-box {
+  background: rgba(10, 15, 25, 0.8); /* Dark holographic panel */
+  border: 1.5px solid #0ff; /* Neon cyan outline */
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 
+    0 0 12px #0ff8, 
+    inset 0 0 20px rgba(0, 255, 255, 0.05); /* Inner glow */
+  backdrop-filter: blur(8px); /* Glass effect */
+  transition: all 0.3s ease;
+}
+
+.data-box:hover {
+  box-shadow: 
+    0 0 18px #0ff, 
+    inset 0 0 25px rgba(0, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+/* === Guest Table === */
+.guest-table {
+  width: 100%;
+  max-width: 650px;
+  margin: 25px auto;
+  border-collapse: collapse;
+  background: rgba(15, 20, 35, 0.85); /* Deep tech panel */
+  border: 1px solid rgba(0, 255, 255, 0.4);
+  border-radius: 14px;
+  overflow: hidden;
+  table-layout: fixed;
+  box-shadow:
+    0 0 20px rgba(0, 255, 255, 0.25),
+    inset 0 0 20px rgba(0, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  transition: 0.3s ease;
+}
+
+.guest-table:hover {
+  box-shadow:
+    0 0 30px rgba(0, 255, 255, 0.4),
+    inset 0 0 25px rgba(0, 255, 255, 0.1);
+}
+
+/* === Table Cells === */
+.guest-table th,
+.guest-table td {
+  width: 50%;
+  padding: 12px 16px;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  color: #0ff;
+  text-shadow: 0 0 6px #0ff9;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  word-wrap: break-word; /* handles long names */
+}
+
+.guest-table th {
+  background: linear-gradient(90deg, #00111a, #00222c);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #0ff;
+}
+
+.guest-table td {
+  background: rgba(0, 15, 25, 0.7);
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 15px;
+}
+
+/* === Row Hover Effect === */
+.guest-table tr:hover td {
+  background: rgba(0, 255, 255, 0.1);
+  color: #fff;
+  text-shadow: 0 0 10px #0ff;
+  transition: all 0.3s ease;
+}
+
+/* === Subtle Animation on Hover === */
+.guest-table th,
+.guest-table td {
+  transition: background 0.3s, color 0.3s, text-shadow 0.3s;
+}
+
+
+/* =========================================================
+   6️⃣ MENU TAGS
+   ========================================================= */
+.tag {
+  display: inline-block;
+  padding: 5px 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #000;
+}
+.tag.green  { background-color: #00ff99; }  /* Ikan */
+.tag.red    { background-color: #ff5555; }  /* Daging */
+.tag.yellow { background-color: #ffee55; }  /* Ayam */
+.tag.blue   { background-color: #55aaff; }  /* Kopi */
+.tag.orange { background-color: #ffaa55; }  /* Teh */
+
+/* =========================================================
+   7️⃣ COUNTDOWN SECTION
+   ========================================================= */
+.countdown-box {
+  margin: 60px auto;
+  text-align: center;
+  background: rgba(20, 20, 20, 0.9);
+  border: 2px solid #00f0ff;
+  box-shadow: 0 0 20px #00f0ff;
+  border-radius: 12px;
+  padding: 25px 20px;
+  width: 70%;
+  max-width: 600px;
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  position: relative;
+  animation: glowPulse 3s infinite ease-in-out;
+}
+
+@keyframes glowPulse {
+  0%   { box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff inset; border-color: #00f0ff; }
+  50%  { box-shadow: 0 0 25px #00cfff, 0 0 40px #00cfff inset; border-color: #00cfff; }
+  100% { box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff inset; border-color: #00f0ff; }
+}
+
+#countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.time-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #111;
+  padding: 15px 10px;
+  border-radius: 10px;
+  min-width: 80px;
+  box-shadow: 0 0 10px #00f0ff inset;
+  flex: 1 1 100px;
+  max-width: 120px;
+}
+
+.time-box span {
+  font-size: 2rem;
+  color: #00f0ff;
+}
+
+.time-box p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-top: 5px;
+}
+
+/* =========================================================
+   8️⃣ IMAGES & GLOWING BORDER
+   ========================================================= */
+.image-section {
+  margin: 40px 0;
+}
+
+.image-section h2 {
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+  font-family: 'Playfair Display', serif;
+}
+
+.image-section img {
+  max-width: 90%;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #00ffff33;
+}
+
+.glowing-border {
+  border: 2px solid #00ffff44;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 10px #00ffff44; }
+  to { box-shadow: 0 0 20px #00ffffaa; }
+}
+
+/* =========================================================
+   9️⃣ RESPONSIVE DESIGN
+   ========================================================= */
+@media (max-width: 768px) {
+  h1 { font-size: 24px; }
+  .page-frame {
+    border-width: 2px;
+    padding: 15px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  }
+
+  #search-bar {
+    font-size: 16px;
+    border-radius: 40px;
+    padding: 12px;
+  }
+
+  .countdown-box {
+    width: 90%;
+    padding: 20px;
+  }
+
+  #countdown { gap: 15px; }
+
+  .time-box span { font-size: 1.8rem; }
+
+  .image-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .countdown-box h2 { font-size: 1.3rem; }
+  .time-box { min-width: 70px; padding: 12px; }
+  .time-box span { font-size: 1.5rem; }
+  .time-box p { font-size: 0.8rem; }
+}
+
+/* Responsive fix for mobile view */
+@media (max-width: 768px) {
+  .search-container {
+    width: 90%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  #search-bar {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+
+  .data-box {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .countdown-box {
+    width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  .page-frame {
+    padding: 10px;
+    border-width: 2px;
+  }
+}

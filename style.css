@@ -8,7 +8,7 @@ body {
   background-size: cover;
   background-blend-mode: overlay;
   background-color: #12081f;
-  color: #f5f2ff;
+  color: #D8A63A;/*#f5f2ff*/
   margin: 0;
   padding: 0;
   text-align: center;
@@ -20,7 +20,7 @@ body {
 h1 {
   font-family: 'Playfair Display', serif;
   font-size: 28px;
-  color: #D8A63A; /* #c779ff=========================================================*/
+  color: #D8A63A; /*#c779ff*/
   text-shadow:
       0 0 10px rgba(199,121,255,.8),
       0 0 25px rgba(140,70,255,.6);

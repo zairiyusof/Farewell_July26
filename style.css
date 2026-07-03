@@ -295,7 +295,7 @@ border-color:#8e3dff;
 }
 
 .image-section h2 {
-  color:#d69bff;
+  color: #D8A63A;/*#d69bff;*/
   text-shadow:0 0 12px #b76cff;
   font-family: 'Playfair Display', serif;
 }

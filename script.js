@@ -17,9 +17,9 @@ function loadCSV() {
         name: guest.NAMA,       // Map 'NAMA' to 'name'
         name2: guest["NAMA PASANGAN"], // Map 'NAMA PASANGAN' to 'name2'
         id: guest.NO,
-        seat: guest.MEJA,
-        seat_no: guest.KEDUDUKAN,        // Map 'KEDUDUKAN' to 'seat_no'
-        seat_partner: guest["KEDUDUKAN PASANGAN"],
+        seat: guest.["NO MEJA"],
+        //seat_no: guest.KEDUDUKAN,        // Map 'KEDUDUKAN' to 'seat_no'
+        seat_partner: guest["NO MEJA PASANGAN"],
         menu: guest.MENU,
         menu_partner: guest["MENU PASANGAN"],
       }));
@@ -44,8 +44,8 @@ function displayResults(filteredGuests) {
       if (guest.name) tableContent += `<tr><th>Nama</th><td>${guest.name}</td></tr>`;
       if (guest.id) tableContent += `<tr><th>No Tentera</th><td>${guest.id}</td></tr>`;
       if (guest.name2) tableContent += `<tr><th>Nama Pasangan</th><td>${guest.name2}</td></tr>`;
-      if (guest.seat) tableContent += `<tr><th>Meja</th><td>${guest.seat}</td></tr>`;
-      if (guest.seat_no) tableContent += `<tr><th>Kedudukan</th><td>${guest.seat_no}</td></tr>`;
+      if (guest.seat) tableContent += `<tr><th>Kedudukan</th><td>${guest.seat}</td></tr>`;
+      //if (guest.seat_no) tableContent += `<tr><th>Kedudukan</th><td>${guest.seat_no}</td></tr>`;
       if (guest.seat_partner) tableContent += `<tr><th>Kedudukan Pasangan</th><td>${guest.seat_partner}</td></tr>`;
 
       table.innerHTML = tableContent;

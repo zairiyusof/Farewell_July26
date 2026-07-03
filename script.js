@@ -44,9 +44,9 @@ function displayResults(filteredGuests) {
       if (guest.name) tableContent += `<tr><th>Nama</th><td>${guest.name}</td></tr>`;
       if (guest.id) tableContent += `<tr><th>No Tentera</th><td>${guest.id}</td></tr>`;
       if (guest.name2) tableContent += `<tr><th>Nama Pasangan</th><td>${guest.name2}</td></tr>`;
-      if (guest.seat) tableContent += `<tr><th>Kedudukan</th><td>${guest.seat}</td></tr>`;
+      if (guest.seat) tableContent += `<tr><th>Meja</th><td>${guest.seat}</td></tr>`;
       //if (guest.seat_no) tableContent += `<tr><th>Kedudukan</th><td>${guest.seat_no}</td></tr>`;
-      if (guest.seat_partner) tableContent += `<tr><th>Kedudukan Pasangan</th><td>${guest.seat_partner}</td></tr>`;
+      if (guest.seat_partner) tableContent += `<tr><th>Meja Pasangan</th><td>${guest.seat_partner}</td></tr>`;
 
       table.innerHTML = tableContent;
       resultsBody.appendChild(table);

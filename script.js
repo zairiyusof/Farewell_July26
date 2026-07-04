@@ -112,6 +112,34 @@ function updateCountdown() {
   document.getElementById("seconds").innerText = secs;
 }
 
+//---------------------------------------------------------------------------------------
+
+const music = document.getElementById("bgMusic");
+
+async function startMusic() {
+    try {
+        await music.play();
+        console.log("Music playing");
+    } catch (err) {
+        console.error(err);
+    }
+
+    window.removeEventListener("pointerdown", startMusic);
+    window.removeEventListener("wheel", startMusic);
+    window.removeEventListener("touchmove", startMusic);
+    window.removeEventListener("keydown", startMusic);
+}
+
+window.addEventListener("pointerdown", startMusic, { once: true });
+window.addEventListener("wheel", startMusic, { once: true });
+window.addEventListener("touchmove", startMusic, { once: true });
+window.addEventListener("keydown", startMusic, { once: true });
+
+
+
+
+//-----------------------------------------------------------------------------------------
+
 setInterval(updateCountdown, 1000);
 
 // --- Debug: Test CSV loading on Netlify ---

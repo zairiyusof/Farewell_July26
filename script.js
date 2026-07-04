@@ -114,7 +114,7 @@ function updateCountdown() {
 
 //---------------------------------------------------------------------------------------
 
-const music = document.getElementById("bgMusic");
+/*const music = document.getElementById("bgMusic");
 
 async function startMusic() {
     try {
@@ -133,7 +133,25 @@ async function startMusic() {
 window.addEventListener("pointerdown", startMusic, { once: true });
 window.addEventListener("wheel", startMusic, { once: true });
 window.addEventListener("touchmove", startMusic, { once: true });
-window.addEventListener("keydown", startMusic, { once: true });
+window.addEventListener("keydown", startMusic, { once: true });*/
+
+const music = document.getElementById("bgMusic");
+
+async function startMusic() {
+    try {
+        await music.play();
+    } catch (err) {
+        console.error(err);
+    }
+
+    ["pointerdown", "touchstart", "touchmove", "wheel"].forEach(event =>
+        document.removeEventListener(event, startMusic)
+    );
+}
+
+["pointerdown", "touchstart", "touchmove", "wheel"].forEach(event =>
+    document.addEventListener(event, startMusic, { once: true, passive: true })
+);
 
 
 

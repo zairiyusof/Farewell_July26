@@ -116,22 +116,31 @@ function updateCountdown() {
 
 const music = document.getElementById("bgMusic");
 
-let started = false;
+let unlocked = false;
 
-async function startMusic() {
-    if (started) return;
-    started = true;
+async function unlockAudio() {
+    if (unlocked) return;
+    unlocked = true;
 
     try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        const audioContext = new AudioContext();
+
+        if (audioContext.state === "suspended") {
+            await audioContext.resume();
+        }
+
         await music.play();
-        console.log("Music started");
+
+        console.log("Playing");
     } catch (err) {
         console.error(err);
-        started = false;
     }
 }
 
-document.addEventListener("pointerdown", startMusic, { passive: true });
+document.body.addEventListener("pointerdown", unlockAudio, {
+    once: true
+});
 
 
 

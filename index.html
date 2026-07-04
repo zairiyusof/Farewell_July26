@@ -20,25 +20,6 @@
     <source src="/songpagar.mp3" type="audio/mpeg">
 </audio>
 
-<script>
-window.addEventListener("load", () => {
-    const music = document.getElementById("bgMusic");
-
-    async function startMusic() {
-        try {
-            await music.play();
-            console.log("Music playing");
-        } catch (err) {
-            console.error(err);
-        }
-
-        document.removeEventListener("pointerdown", startMusic);
-    }
-
-    document.addEventListener("pointerdown", startMusic);
-});
-</script>
-
     <h1>SELAMAT DATANG KE MDIO LEADERSHIP DINNER FORUM!</h1>
     <p class="description">Welcome to an evening of celebration and meaningful connections. Please find your seat and enjoy the event!</p>
 

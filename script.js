@@ -114,45 +114,24 @@ function updateCountdown() {
 
 //---------------------------------------------------------------------------------------
 
-/*const music = document.getElementById("bgMusic");
-
-async function startMusic() {
-    try {
-        await music.play();
-        console.log("Music playing");
-    } catch (err) {
-        console.error(err);
-    }
-
-    window.removeEventListener("pointerdown", startMusic);
-    window.removeEventListener("wheel", startMusic);
-    window.removeEventListener("touchmove", startMusic);
-    window.removeEventListener("keydown", startMusic);
-}
-
-window.addEventListener("pointerdown", startMusic, { once: true });
-window.addEventListener("wheel", startMusic, { once: true });
-window.addEventListener("touchmove", startMusic, { once: true });
-window.addEventListener("keydown", startMusic, { once: true });*/
-
 const music = document.getElementById("bgMusic");
 
+let started = false;
+
 async function startMusic() {
+    if (started) return;
+    started = true;
+
     try {
         await music.play();
+        console.log("Music started");
     } catch (err) {
         console.error(err);
+        started = false;
     }
-
-    ["pointerdown", "touchstart", "touchmove", "wheel"].forEach(event =>
-        document.removeEventListener(event, startMusic)
-    );
 }
 
-["pointerdown", "touchstart", "touchmove", "wheel"].forEach(event =>
-    document.addEventListener(event, startMusic, { once: true, passive: true })
-);
-
+document.addEventListener("pointerdown", startMusic, { passive: true });
 
 
 
@@ -162,7 +141,7 @@ setInterval(updateCountdown, 1000);
 
 // --- Debug: Test CSV loading on Netlify ---
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("data56.csv")
+  fetch("data56v3.csv")
     .then(response => response.text())
     .then(csvText => {
       console.log("✅ CSV file fetched successfully");

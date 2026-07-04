@@ -16,38 +16,7 @@
       <img src="backdrop.png" alt="Dinner Event Banner">
     </header>
 
-    <audio id="bgMusic" preload="auto" playsinline loop>
-    <source src="/songpagar.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-const music = document.getElementById("bgMusic");
-
-async function unlockAudio() {
-    document.removeEventListener("touchstart", unlockAudio);
-    document.removeEventListener("pointerdown", unlockAudio);
-
-    try {
-        music.load();
-        await music.play();
-        console.log("Music playing");
-    } catch (e) {
-        console.error(e);
-    }
-}
-
-document.addEventListener("touchstart", unlockAudio, {
-    once: true,
-    passive: true
-});
-
-document.addEventListener("pointerdown", unlockAudio, {
-    once: true,
-    passive: true
-});
-</script>
-
-    <!-- <audio id="bgMusic" preload="auto" loop>
+    <audio id="bgMusic" preload="auto" loop>
     <source src="/songpagar.mp3" type="audio/mpeg">
 </audio>
 
@@ -68,8 +37,10 @@ window.addEventListener("load", () => {
 
     document.addEventListener("pointerdown", startMusic);
 });
-</script> -->
+</script>
 
+    <h1>SELAMAT DATANG KE MDIO Leadership Dinner Forum!</h1>
+    <p class="description">Welcome to an evening of celebration and meaningful connections. Together, we are Connecting Leaders; Shaping Strategic Perspectives. Please find your seat and enjoy the event!</p>
     <h1>SELAMAT DATANG KE MDIO LEADERSHIP DINNER FORUM!</h1>
     <p class="description">Welcome to an evening of celebration and meaningful connections. Please find your seat and enjoy the event!</p>
 
